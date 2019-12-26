@@ -9,7 +9,7 @@ using namespace std;
 int main()
 {
 	Mat img1 = imread("marco-assmann-zUMk4bg8GFc-unsplash.jpg");
-	Mat img2 = img1(Rect(1200, 2000, 1920, 1080));
+	Mat img2 = img1(Rect(700, 2000, 1920, 1080));
 
 	img2 -= ~img2;
 	namedWindow("img1", WINDOW_NORMAL);
