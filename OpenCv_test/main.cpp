@@ -18,6 +18,9 @@ int main()
 void MatOp3()
 {
 	Mat img1 = imread("marco-assmann-zUMk4bg8GFc-unsplash.jpg");
+
+	cout << "Width: " << img1.cols << endl;
+	cout << "Height: " << img1.rows << endl;
 	Mat img2 = img1(Rect(700, 2000, 1920, 1080));
 	Mat img3 = img1(Rect(700, 2000, 1920, 1080)).clone();
 
