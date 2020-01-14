@@ -6,6 +6,24 @@
 using namespace cv;
 using namespace std;
 
+void mask_copyTo()
+{
+	Mat src = imread("IMG_4119.JPG", IMREAD_COLOR);
+	Mat mask = imread("back.bmp", IMREAD_GRAYSCALE);
+	Mat dst = imread("field.jpg", IMREAD_COLOR);
+
+	if (src.empty() || mask.empty() || dst.empty())
+	{
+		cerr << "Image load error" << endl;
+		return;
+	}
+
+	src.copyTo(dst, mask);
+
+	imshow("dst", dst);
+	waitKey(0);
+	destroyAllWindows();
+}
 void mask_setTo()
 {
 	Mat src = imread("hr.jpg", IMREAD_COLOR);
@@ -28,7 +46,8 @@ void mask_setTo()
 
 int main()
 {
-	mask_setTo();
+	//mask_setTo();
+	mask_copyTo();
 
 	return 0;
 }
